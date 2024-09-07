@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Gungun!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: #fff;
+            padding: 40px 50px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #f56b6b;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .birthday-wish {
+            font-weight: bold;
+            color: #444;
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+        }
+
+        .cake {
+            font-size: 3rem;
+            margin-top: 10px;
+            animation: bounce 1.5s infinite;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #999;
+        }
+
+        /* Bounce Animation for the Cake */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 30px 40px;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            p, .birthday-wish {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px 30px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .birthday-wish {
+                font-size: 1.2rem;
+            }
+            .cake {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            p, .birthday-wish {
+                font-size: 0.95rem;
+            }
+            .cake {
+                font-size: 2rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday, Gungun! 🎉</h1>
+        <p>On your special day, I just wanted to let you know how much you mean to me. Every moment with you has been a blessing, and I’m so grateful for the time we’ve shared.</p>
+        <p>You bring light and joy to everyone around you, and I hope this day brings you the same happiness you’ve given to others.</p>
+        <p class="birthday-wish">Wishing you all the love, joy, and happiness in the world. Have an amazing birthday, Gungun!</p>
+        <div class="cake">🎂</div>
+        <div class="footer">With love, Ayush</div>
+    </div>
+</body>
+</html>
