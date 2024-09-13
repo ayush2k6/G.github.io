@@ -4,119 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday, Gungun!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles */
+        /* Reset */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle, #ffcfdf, #ffc3a0);
+            height: 100vh;
+            overflow: hidden;
             display: flex;
-            align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            align-items: center;
             text-align: center;
             color: #333;
+            position: relative;
         }
 
         .container {
-            max-width: 800px;
-            background-color: #fff;
-            padding: 40px 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
             border-radius: 15px;
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            max-width: 800px;
+            animation: fadeIn 2s ease;
+            position: relative;
+            z-index: 2;
         }
 
         h1 {
+            font-family: 'Playfair Display', serif;
             font-size: 3rem;
-            color: #f56b6b;
-            margin-bottom: 25px;
+            color: #ff5e6c;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease;
         }
 
         p {
-            font-size: 1.25rem;
-            line-height: 1.8;
+            font-size: 1.2rem;
             color: #555;
             margin-bottom: 20px;
+            animation: fadeIn 2.5s ease;
         }
 
-        .birthday-wish {
-            font-weight: bold;
-            color: #444;
+        .message {
             font-size: 1.4rem;
+            font-weight: bold;
+            color: #ff5e6c;
             margin-bottom: 30px;
+            animation: fadeIn 3s ease;
         }
 
-        .cake {
+        .heart-icon {
             font-size: 3rem;
-            margin-top: 10px;
-            animation: bounce 1.5s infinite;
+            color: #ff5e6c;
+            margin-top: 30px;
+            animation: pulse 1.5s infinite;
         }
 
         .footer {
             margin-top: 40px;
             font-size: 1rem;
-            color: #999;
+            color: #777;
         }
 
-        /* Bounce Animation for the Cake */
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
+        /* Fireworks */
+        .fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .firework {
+            position: absolute;
+            border-radius: 50%;
+            animation: explode 3s ease-in-out forwards, shoot 3s ease-in-out infinite;
+        }
+
+        /* Firework Colors */
+        .firework:nth-child(1) {
+            background-color: #ff5e6c;
+        }
+        .firework:nth-child(2) {
+            background-color: #ffd700;
+        }
+        .firework:nth-child(3) {
+            background-color: #00ff00;
+        }
+        .firework:nth-child(4) {
+            background-color: #1e90ff;
+        }
+        .firework:nth-child(5) {
+            background-color: #ff6347;
+        }
+        .firework:nth-child(6) {
+            background-color: #ff4500;
+        }
+
+        /* Shooting Animation */
+        @keyframes shoot {
+            0% {
+                opacity: 0;
+                transform: translateY(100%);
             }
             50% {
-                transform: translateY(-10px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100%);
             }
         }
 
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .container {
-                padding: 30px 40px;
+        /* Explosion Animation */
+        @keyframes explode {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
             }
+            100% {
+                width: 150px;
+                height: 150px;
+                opacity: 0;
+            }
+        }
+
+        /* Fireworks Delay & Positioning */
+        .firework:nth-child(1) {
+            top: 30%;
+            left: 30%;
+            animation-delay: 1s;
+        }
+        .firework:nth-child(2) {
+            top: 50%;
+            left: 70%;
+            animation-delay: 2s;
+        }
+        .firework:nth-child(3) {
+            top: 60%;
+            left: 20%;
+            animation-delay: 3s;
+        }
+        .firework:nth-child(4) {
+            top: 20%;
+            left: 80%;
+            animation-delay: 4s;
+        }
+        .firework:nth-child(5) {
+            top: 40%;
+            left: 50%;
+            animation-delay: 5s;
+        }
+        .firework:nth-child(6) {
+            top: 10%;
+            left: 40%;
+            animation-delay: 6s;
+        }
+
+        /* Audio */
+        audio {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
             }
-            p, .birthday-wish {
+            p, .message {
                 font-size: 1.1rem;
             }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 25px 30px;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            p {
-                font-size: 1rem;
-            }
-            .birthday-wish {
-                font-size: 1.2rem;
-            }
-            .cake {
+            .heart-icon {
                 font-size: 2.5rem;
             }
         }
 
         @media (max-width: 480px) {
-            .container {
-                padding: 20px;
-            }
             h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
-            p, .birthday-wish {
-                font-size: 0.95rem;
+            p, .message {
+                font-size: 1rem;
             }
-            .cake {
+            .heart-icon {
                 font-size: 2rem;
             }
         }
@@ -124,13 +203,29 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Happy Birthday, Gungun! 🎉</h1>
-        <p>On your special day, I just wanted to let you know how much you mean to me. Every moment with you has been a blessing, and I’m so grateful for the time we’ve shared.</p>
-        <p>You bring light and joy to everyone around you, and I hope this day brings you the same happiness you’ve given to others.</p>
-        <p class="birthday-wish">Wishing you all the love, joy, and happiness in the world. Have an amazing birthday, Gungun!</p>
-        <div class="cake">🎂</div>
-        <div class="footer">With love, Ayush</div>
+
+    <!-- Fireworks Effect -->
+    <div class="fireworks">
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
     </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1>Happy Birthday, Gungun!</h1>
+        <p>I hope this day brings you the happiness you deserve. You’re one of a kind, and I’m grateful for every memory we’ve shared so far.</p>
+        <p>Your strength, kindness, and positivity have always been inspiring, and today, I just wanted to remind you how amazing you are.</p>
+        <p class="message">Here’s to many more birthdays filled with joy, adventure, and great moments!</p>
+        <div class="heart-icon">❤</div>
+        <div class="footer">Wishing you the best, Ayush</div>
+    </div>
+
+    <!-- Spotify Embed -->
+    <iframe src="https://open.spotify.com/embed/track/4UaA2aEdLZZT4hPIwrwLMp?start=9" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
 </body>
 </html>
