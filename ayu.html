@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Gungun!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle, #fbd3e9, #bb377d);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            position: relative;
+        }
+
+        /* Main Container */
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 20px;
+            max-width: 700px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #bb377d;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .message {
+            font-size: 1.4rem;
+            color: #bb377d;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .heart-icon {
+            font-size: 3rem;
+            color: #bb377d;
+            margin-top: 30px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #777;
+        }
+
+        /* Floating balloons */
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 80px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle at top, #ff5e6c, #bb377d);
+            animation: floatBalloon 6s ease-in-out infinite;
+            opacity: 0.7;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .balloon:nth-child(2) {
+            width: 100px;
+            height: 150px;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        .balloon:nth-child(3) {
+            left: 40%;
+            animation-delay: 4s;
+        }
+
+        .balloon:nth-child(4) {
+            left: 60%;
+            animation-delay: 6s;
+        }
+
+        .balloon:nth-child(5) {
+            left: 80%;
+            animation-delay: 8s;
+        }
+
+        @keyframes floatBalloon {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            p, .message {
+                font-size: 1rem;
+            }
+            .heart-icon {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            p, .message {
+                font-size: 0.9rem;
+            }
+            .heart-icon {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Balloons Floating in the Background -->
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <!-- Main Birthday Message -->
+    <div class="container">
+        <h1>🎉 Happy Birthday, Gungun! 🎉</h1>
+        <p>I hope today brings you nothing but smiles and joy. 😊 You’ve always had a way of lighting up the room with your presence. 🌟</p>
+        <p>From your kindness 💖 to your strength 💪, you mean a lot to everyone. And even if I don't say it often, you've always meant a lot to me too. ✨</p>
+        <p class="message">Here's to more moments of laughter, adventure 🎈, and amazing memories that will last a lifetime! 🎂</p>
+        <div class="heart-icon">❤</div>
+        <div class="footer">With all the love, Ayush</div>
+    </div>
+
+</body>
+</html>
